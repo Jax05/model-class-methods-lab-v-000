@@ -8,6 +8,6 @@ class Classification < ActiveRecord::Base
 
   def self.longest
     # Boat.all.order("length desc").first.classifications
-    joins(:boats).order("length desc").first
+    joins(:boats).order("length desc")
   end
 end
