@@ -10,6 +10,6 @@ class Captain < ActiveRecord::Base
   end
 
   def self.talented_seafarers
-    includes(boats: [:classifications]).where(classifications: {name: ["Sailboat", "Motorboat"]}).distinct
+    includes(boats: [:classifications]).where(classifications: {name: "Motorboat"}).where("self.sailors.pluck(:id)")
   end
 end
