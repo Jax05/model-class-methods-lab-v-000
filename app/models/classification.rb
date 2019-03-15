@@ -7,6 +7,6 @@ class Classification < ActiveRecord::Base
   end
 
   def self.longest
-    where("name DESC").first
+    order("name DESC").first
   end
 end
