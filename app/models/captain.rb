@@ -16,4 +16,8 @@ class Captain < ActiveRecord::Base
   def self.non_sailors
     where.not(id: sailors.pluck(:id))
   end
+
+  def self.my_all
+    where("classifications = *")
+  end
 end
