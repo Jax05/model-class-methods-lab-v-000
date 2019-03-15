@@ -12,4 +12,8 @@ class Captain < ActiveRecord::Base
   def self.talented_seafarers
     includes(boats: [:classifications]).where(classifications: {name: "Motorboat"}, captains: {id: sailors.pluck(:id)})
   end
+
+  def self.non_sailors
+    
+  end
 end
