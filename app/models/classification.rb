@@ -5,4 +5,8 @@ class Classification < ActiveRecord::Base
   def self.my_all
     select(:name)
   end
+
+  def self.longest
+    where("name DESC").first
+  end
 end
